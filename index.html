@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeAlpha - Calculator Task</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+    }
+
+    .calculator-container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.2); /* Techy green glow */
+    }
+
+    .display-screen {
+      width: 100%;
+      height: 60px;
+      background-color: #000;
+      color: white;
+      text-align: right;
+      font-size: 2rem;
+      border: none;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns for standard layout */
+      gap: 10px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-num { background-color: #333; color: white; }
+    .btn-op { background-color: #ff9f0a; color: white; } /* Orange for operators */
+    .btn-clear { background-color: #a5a5a5; color: black; }
+    
+    button:hover { opacity: 0.8; }
+    button:active { transform: scale(0.95); }
+    
+    /* Make the zero button span two columns */
+    .btn-zero { grid-column: span 2; }
+  </style>
+</head>
+<body>
+
+  <div class="calculator-container">
+    <input type="text" class="display-screen" id="display" disabled placeholder="0">
+    
+    <div class="buttons-grid">
+      <button class="btn-clear" onclick="clearDisplay()">C</button>
+      <button class="btn-op" onclick="deleteLast()">DEL</button>
+      <button class="btn-op" onclick="appendToDisplay('/')">/</button>
+      <button class="btn-op" onclick="appendToDisplay('*')">*</button>
+
+      <button class="btn-num" onclick="appendToDisplay('7')">7</button>
+      <button class="btn-num" onclick="appendToDisplay('8')">8</button>
+      <button class="btn-num" onclick="appendToDisplay('9')">9</button>
+      <button class="btn-op" onclick="appendToDisplay('-')">-</button>
+
+      <button class="btn-num" onclick="appendToDisplay('4')">4</button>
+      <button class="btn-num" onclick="appendToDisplay('5')">5</button>
+      <button class="btn-num" onclick="appendToDisplay('6')">6</button>
+      <button class="btn-op" onclick="appendToDisplay('+')">+</button>
+
+      <button class="btn-num" onclick="appendToDisplay('1')">1</button>
+      <button class="btn-num" onclick="appendToDisplay('2')">2</button>
+      <button class="btn-num" onclick="appendToDisplay('3')">3</button>
+      <button class="btn-op" onclick="calculateResult()">=</button>
+
+      <button class="btn-num btn-zero" onclick="appendToDisplay('0')">0</button>
+      <button class="btn-num" onclick="appendToDisplay('.')">.</button>
+    </div>
+  </div>
+</body>
+                                      </html>
+      
