@@ -71,8 +71,8 @@ button:active { transform: scale(0.95); }
   }
 
   button {
-    padding: 15px;      
-    font-size: 1.1rem;  
+    padding: 25px;      
+    font-size: 1.3rem;  
     border-radius: 8px;
   }
 
